@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/cats-food/static/css/main.589f3886.css",
+    "main.js": "/cats-food/static/js/main.453214d3.js",
+    "static/js/787.2b99c7da.chunk.js": "/cats-food/static/js/787.2b99c7da.chunk.js",
+    "static/media/main_picture.png": "/cats-food/static/media/main_picture.e6c55167fef27cc9ab7d.png",
+    "static/media/pattern.png": "/cats-food/static/media/pattern.d8ce64e43f9ae47316d1.png",
+    "index.html": "/cats-food/index.html",
+    "main.589f3886.css.map": "/cats-food/static/css/main.589f3886.css.map",
+    "main.453214d3.js.map": "/cats-food/static/js/main.453214d3.js.map",
+    "787.2b99c7da.chunk.js.map": "/cats-food/static/js/787.2b99c7da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.589f3886.css",
+    "static/js/main.453214d3.js"
+  ]
+}
