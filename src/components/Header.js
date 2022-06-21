@@ -18,5 +18,7 @@ const HeaderCont = styled.header`
     line-height: 44px;
     text-align: center;
     text-shadow: 0px 1px 1px #000000;
-    margin: 36px ${SIDE_MARGIN}px 25px;
+    /* margin: 36px ${SIDE_MARGIN}px 25px; */
+    margin: 36px auto 25px;
+    width: 100%;
 `

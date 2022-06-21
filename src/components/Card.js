@@ -20,10 +20,11 @@ import {
 } from '../constants/cssColors';
 import { BORDER_RADIUS_PRODUCT_CARD } from '../constants/cssDimentions';
 import styled from '@emotion/styled';
+import { jsx, css } from '@emotion/react'
 
 
 
-export default function Card({ taste, weight, inStock }) {
+export default function Card({ taste, weight, inStock, isLastAlone }) {
     const [isInBasket, setIsInBasket] = useState(false);
     const [isMouseOver, setIsMouseOver] = useState(false);
     let descr;
@@ -64,11 +65,13 @@ export default function Card({ taste, weight, inStock }) {
         // backColor = 'orange';
         backColor = DEFAULT_HOVER_COLOR;
     }
-    
+
     if (backColor === SELECTED_COLOR && isMouseOver) {
         // backColor = 'violet';
         backColor = SELECTED_HOVER_COLOR;
     }
+
+    const Cont = !isLastAlone ? ContainerOddItems : ContainerEvenItems;
 
     return (
         <Cont>
@@ -104,12 +107,23 @@ export default function Card({ taste, weight, inStock }) {
         </Cont>
     )
 }
-const Cont = styled.div`
+
+const ContainerOddItems = styled.div`
+    width: 320px;
+    height: 509px;
+    z-index: 10;
+    margin-bottom: 25px;`;
+
+const ContainerEvenItems = styled.div`
     width: 320px;
     height: 509px;
     z-index: 10;
     margin-bottom: 25px;
-`;
+    @media (max-width: 1150px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }`;
+
 const Border = styled.div`
     box-sizing: border-box;
     border-radius: ${BORDER_RADIUS_PRODUCT_CARD}px;

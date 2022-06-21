@@ -8,17 +8,22 @@ import Card from './components/Card';
 
 
 export default function App() {
+  let data = FEED_RANGE.slice();
+  if (data.length % 2 === 1) {
+    data[data.length - 1].isLastAlone = true;
+  }
   return (
     <div className="App">
       <MainContainer>
         <Header name={MAIN_HEADER_NAME} />
         <TableContainer>
-          {FEED_RANGE.map(item =>
+          {data.map(item =>
             <Card
               key={item.vendorCode}
               taste={item.taste}
               weight={item.weight}
               inStock={item.inStock}
+              isLastAlone={item?.isLastAlone}
             />)}
         </TableContainer>
       </MainContainer>
@@ -42,11 +47,21 @@ const MainShadow = styled.div`
 `;
 
 const TableContainer = styled.div`
-  border: 1px solid yellow;
-
-  padding: 0 ${SIDE_MARGIN}px;
+  column-gap: ${SIDE_MARGIN}px;
+  row-gap: ${SIDE_MARGIN / 2}px;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  width: max-content;
+  position: relative;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
   grid-template-rows: repeat(fit-content, minmax(509px, 1fr));
+  
+  @media (max-width: 1150px) {
+      grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+
+  @media (max-width: 750px) {
+      grid-template-columns:  minmax(320px, 1fr);
+  }
 `

@@ -96,7 +96,7 @@ const Decr = styled.p`
     padding-top: 17px;
     padding-left: 47px;
 `
-// const DontApp
+
 const Name = styled.h2`
     padding-top: 5px;
     padding-left: 44px;
