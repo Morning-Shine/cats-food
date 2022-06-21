@@ -20,8 +20,6 @@ import {
 } from '../constants/cssColors';
 import { BORDER_RADIUS_PRODUCT_CARD } from '../constants/cssDimentions';
 import styled from '@emotion/styled';
-import { jsx, css } from '@emotion/react'
-
 
 
 export default function Card({ taste, weight, inStock, isLastAlone }) {
@@ -122,6 +120,10 @@ const ContainerEvenItems = styled.div`
     @media (max-width: 1150px) {
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+    @media (max-width: 750px) {
+        grid-column-start: auto;
+        grid-column-end: auto;
     }`;
 
 const Border = styled.div`

@@ -62,6 +62,6 @@ const TableContainer = styled.div`
   }
 
   @media (max-width: 750px) {
-      grid-template-columns:  minmax(320px, 1fr);
+      grid-template-columns: repeat(1, minmax(320px, 1fr));
   }
 `
